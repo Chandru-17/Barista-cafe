@@ -17,6 +17,8 @@
     animation-duration: 10s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+    position: relative;
+   
 }
 .logofont{
     
@@ -47,11 +49,7 @@
     font-weight: bold;
     
 }
-.nav_container{
-    padding-top: 3rem;
-    
-    
-}
+
 .navbar{
     display: flex;
     position: fixed;
@@ -59,8 +57,10 @@
     justify-content: space-between;
     width:80%;
     padding: 1rem;
+    top: 30px;
+    left: 175px;
     /* margin: 0 auto; */
-    margin-left: 8rem;
+    /* margin-left: 8rem; */
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.35)   
 }
@@ -82,8 +82,82 @@
     transform: rotate(-36deg);
 }
 
+
 @keyframes bgchange {
     0% {background-image: url('./images/happy-waitress-giving-coffee-customers-while-serving-them-coffee-shop.jpg')};
     50% {background-image: url('./images/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg')};
     100%{background-image: url('./images/happy-loving-couple-bakers-drinking-coffee-looking-notebook.jpg')};
+}
+#c2{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #bc6c25;
+}
+#cafeklang{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 68px;
+    color: #ffffff;
+}
+#c1{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+.ourstory{
+    text-decoration: none;
+    color: #ffffff;
+    
+    font-size: 16px;
+    padding: 12px 28px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 1000;
+    margin-right: 10px;
+    border-radius: 21px;
+}
+.ourstory:hover{
+    background-color: #ffffff;
+    color: #DDA15E;
+}
+.reviews{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(188, 108, 37);
+    font-size: 16px;
+    padding: 12px 28px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 1000;
+    border-radius: 21px;
+}
+.reviews:hover{
+    background-color: rgb(221, 161, 94);
+    color: #ffffff;
+}
+.section1{
+    padding-top: 15px;
+}
+.content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    text-align: center;
+    z-index: 99999;
+}
+.pseudo{
+    position: absolute;
+    top: 35%;
+    left: 37%;
+}
+.content::after {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius:20px;
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-55%, -50%) rotate(45deg);
+    width: 250px;
+    height: 350px;
+    pointer-events: none;
+   z-index: -1;
 }
