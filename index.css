@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
+  font-family: "Plus Jakarta Sans", sans-serif;
   
 }
 
@@ -170,7 +170,7 @@
 }
 .aboutsection{
     background-color: #49290c;
-    height: 100vh;
+    height: 120vh;
     position: relative;
     overflow-x: hidden;
     display: flex;
@@ -242,6 +242,155 @@
   height: 100vh;
   position: relative;
   background-color: #b78752;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr 2fr ;
+  grid-template-areas: 
+  "t t t t"
+  "c1 c2 c3 c4";
+  column-gap: 20px;
+}
+.top{
+  grid-area: t;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding-top: 40px;
+}
+.card1{
+  grid-area: c1;
+  position: relative;
+  background-image: url(./images/team/portrait-elegant-old-man-wearing-suit.jpg);
+  background-size: cover;
+  padding: 0 12px;
+  border-radius: 15px;
+}
+.card1::after{
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  border-radius: 15px;
+}
+.teamblockinfo{
+  position: absolute;
+  padding: 20px;
+  display: grid;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  grid-template-rows: 3fr 1fr;
+  z-index: 50;
+}
+.teaminfo{
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: rgb(255 255 255);
+  font-size: 20px;
+  align-items:flex-end;
+}
+.teamsubject{
+  color: rgb(255 255 255);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.name{
+  font-size: 28px;
+  font-weight: 700;
+  text-align: start;
+  padding-left: 10px;
+}
+.tag{
+  position: relative;
+  background-color: #BC6C25;
+  font: 2px;
+}
+.tag::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  border-top: 10px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-right: 13px solid #BC6C25;
+  ;
+}
+.card2::after{
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  border-radius: 15px;
+}
+.card3::after{
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  border-radius: 15px;
+}
+.card4::after{
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  border-radius: 15px;
+}
+/* .card1:hover{
+ 
+} */
+.card2{
+  grid-area: c2;
+  position: relative;
+  background-image: url(./images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg);
+  background-size: cover;
+  padding: 0 12px;
+  border-radius: 15px;
+}
+.card3{
+  grid-area: c3;
+  position: relative;
+  background-image: url(./images/team/small-business-owner-drinking-coffee.jpg);
+  background-size: cover;
+  padding: 0 12px;
+  border-radius: 15px;
+}
+.card4{
+  grid-area: c4;
+  position: relative;
+  background-image: url(./images/team/smiley-business-woman-working-cashier.jpg);
+  background-size: cover;
+  padding: 0 12px;
+  border-radius: 15px;
 }
