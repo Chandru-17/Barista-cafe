@@ -4,8 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
-  
 }
+
 
 .slider {
   background-image: url("./images/happy-waitress-giving-coffee-customers-while-serving-them-coffee-shop.jpg");
@@ -13,7 +13,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment:scroll;
+  background-attachment: scroll;
   /* animation: bgchange 10s linear infinite; */
   animation-name: bgchange;
   animation-direction: alternate-reverse;
@@ -167,43 +167,54 @@
   height: 350px;
   pointer-events: none;
   z-index: -1;
+  transition-property: transform;
 }
-.aboutsection{
-    background-color: #49290c;
-    height: 120vh;
-    position: relative;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
-    padding: 60px;
-    gap: 100px;
+@keyframes rotate{
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
 }
-
-
+.aboutsection {
+  background-color: #49290c;
+  height: 120vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 100px;
+}
 .leftview {
   height: 550px;
   width: 500px;
   position: relative;
   border-radius: 15px;
-  background-image: url('./images/barman-with-fruits.jpg');
+  background-image: url("./images/barman-with-fruits.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .leftview::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(188, 108, 37, 1), rgba(0, 0, 0, 0.35));
+  background: linear-gradient(
+    to top,
+    rgba(188, 108, 37, 1),
+    rgba(0, 0, 0, 0.35)
+  );
   border-radius: 15px;
 }
-.abouttext{
+.abouttext {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 18px;
   font-weight: bold;
@@ -214,10 +225,10 @@
   color: #ffffff;
 }
 
-.rightview{
+.rightview {
   height: 550px;
   width: 500px;
- 
+
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #ffffff;
   display: flex;
@@ -225,54 +236,69 @@
   gap: 25px;
   justify-content: center;
 }
-.rightview p{
+.rightview p {
   line-height: 2;
 }
-.rightview a{
+.rightview a {
   border: 3px solid white;
   color: #ffffff;
   text-decoration: none;
   padding: 15px;
   border-radius: 25px;
 }
-.button2{
+.button2 {
   margin-top: 25px;
 }
-.team{
+.team {
   height: 100vh;
   position: relative;
   background-color: #b78752;
   padding-top: 30px;
   padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: 1fr 2fr ;
-  grid-template-areas: 
-  "t t t t"
-  "c1 c2 c3 c4";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+    "t t t t"
+    "c1 c2 c3 c4";
   column-gap: 20px;
 }
-.top{
+.top {
   grid-area: t;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  padding-top: 40px;
+  padding-bottom: 20px;
 }
-.card1{
+.card1 {
   grid-area: c1;
   position: relative;
-  background-image: url(./images/team/portrait-elegant-old-man-wearing-suit.jpg);
-  background-size: cover;
-  padding: 0 12px;
   border-radius: 15px;
+  overflow: hidden;
 }
-.card1::after{
+.card1::before{
   content: '';
+  position: absolute;
+  z-index: 1;
+  background-image:url(./images/team/portrait-elegant-old-man-wearing-suit.jpg) ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card1:hover::before{
+  transform: scale(1.1);
+}
+.card1::after {
+  content: "";
   position: absolute;
   z-index: 2;
   top: 0;
@@ -280,10 +306,170 @@
   bottom: 0;
   left: 0;
   padding: 30px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(188, 108, 37, 1)
+  );
   border-radius: 15px;
 }
-.teamblockinfo{
+.card1 {
+  grid-area: c1;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card1::before{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-image:url(./images/team/portrait-elegant-old-man-wearing-suit.jpg) ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card1:hover::before{
+  transform: scale(1.1);
+}
+.card1::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(188, 108, 37, 1)
+  );
+  border-radius: 15px;
+}
+.card2 {
+  grid-area: c2;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card2::before{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-image:url(./images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg) ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card2:hover::before{
+  transform: scale(1.1);
+}
+.card2::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(188, 108, 37, 1)
+  );
+  border-radius: 15px;
+}
+.card3 {
+  grid-area: c3;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card3::before{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-image:url(./images/team/small-business-owner-drinking-coffee.jpg) ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card3:hover::before{
+  transform: scale(1.1);
+}
+.card3::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(188, 108, 37, 1)
+  );
+  border-radius: 15px;
+}
+.card4 {
+  grid-area: c4;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card4::before{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-image:url(./images/team/smiley-business-woman-working-cashier.jpg) ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card4:hover::before{
+  transform: scale(1.1);
+}
+.card4::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(188, 108, 37, 1)
+  );
+  border-radius: 15px;
+}
+.teamblockinfo {
   position: absolute;
   padding: 20px;
   display: grid;
@@ -294,103 +480,203 @@
   grid-template-rows: 3fr 1fr;
   z-index: 50;
 }
-.teaminfo{
+.teaminfo {
   margin-top: 200px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   color: rgb(255 255 255);
   font-size: 20px;
-  align-items:flex-end;
+  align-items: flex-end;
 }
-.teamsubject{
+.teamsubject {
   color: rgb(255 255 255);
   font-size: 20px;
   display: flex;
   align-items: center;
   padding: 10px;
 }
-.name{
+.name {
   font-size: 28px;
   font-weight: 700;
   text-align: start;
   padding-left: 10px;
 }
-.tag{
+.tag {
   position: relative;
-  background-color: #BC6C25;
+  background-color: #bc6c25;
   font: 2px;
 }
-.tag::before{
-  content: '';
+.tag::before {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: -12px;
   border-top: 10px solid transparent;
   border-bottom: 13px solid transparent;
-  border-right: 13px solid #BC6C25;
-  ;
+  border-right: 13px solid #bc6c25;
 }
-.card2::after{
-  content: '';
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 30px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
-  border-radius: 15px;
-}
-.card3::after{
-  content: '';
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 30px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
-  border-radius: 15px;
-}
-.card4::after{
-  content: '';
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 30px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
-  border-radius: 15px;
-}
-/* .card1:hover{
- 
-} */
-.card2{
-  grid-area: c2;
+.Cafemenu{
+  background-color: #000000;
   position: relative;
-  background-image: url(./images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg);
+  overflow-x: hidden;
+  background-image: url(./images/happy-waitress-giving-coffee-customers-while-serving-them-coffee-shop.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 12px;
-  border-radius: 15px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: #ffffff;
 }
-.card3{
-  grid-area: c3;
-  position: relative;
-  background-image: url(./images/team/small-business-owner-drinking-coffee.jpg);
-  background-size: cover;
-  padding: 0 12px;
-  border-radius: 15px;
+.Outerlayout{
+background-color: rgba(0, 0, 0, 0.65);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 45px;
+display: flex;
+flex-direction: column;
+gap: 30px;
+width: 42%;
+border-radius: 20px;
 }
-.card4{
-  grid-area: c4;
+.foodname{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom:1px solid rgba(255, 255, 255, 0.35) ;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.description{
+
+  color:rgba(255, 255, 255, 0.35);
+  
+  font-size: 14px;
+}
+.menuhead{
+  text-align: center ;
+}
+.testimonial{
+  
+  width: 100%;
+  background-color: #7c5c52;
+  padding-left:50px ;
+  padding-right: 50px;
+  padding-bottom: 100px;
+}
+.review{
+  text-align: center;
+  padding: 70px;
+  color: white;
+}
+.reviewslayout{
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: 
+  "r1 r2"
+  "r3 r4"
+  "r5 r6" ;
+  justify-items: center;
+  row-gap: 30px;
+  }
+.recard1{
+  height: 311px;
+  width: 478px;
+  grid-area: r1;
+  background-color: rgb(68, 131, 186);
+  border-radius: 20px;
+  border: 5px solid white;
+}
+.recard2{
+  grid-area: r2;
+  height: 311px;
+  width: 478px;
+  
+}
+.recard3{
+  grid-area: r3;
+  height: 311px;
+  width: 478px;
+  
+}
+.recard4{
+  grid-area: r4;
+  height: 311px;
+  width: 478px;
+  background-color: aqua;
+  border-radius: 20px;
+  border: 5px solid white;
+}
+.recard5{
+  grid-area: r5;
+  height: 311px;
+  width: 478px;
+  border-radius: 20px;
+  border: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+.recard6{
+  grid-area: r6;
+  height: 311px;
+  width: 478px;
+}
+.recardbackground{
   position: relative;
-  background-image: url(./images/team/smiley-business-woman-working-cashier.jpg);
+  background: url(./images/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg);
+  height: 40%;
+  background-position: center;
   background-size: cover;
-  padding: 0 12px;
-  border-radius: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.recarddetails{
+  position: relative;
+  background-color: #b78752;
+  height: 60%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #ffffff;
+}
+.recardflex{
+    position: absolute;
+    display: flex;
+    margin: 1.5rem;
+    align-items: center;
+    gap: 10px;
+}
+.reimage{
+  background-image: url(./images/reviews/senior-man-white-sweater-eyeglasses.jpg);
+  height: 70px;
+  width: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 90px;
+  
+}
+.recardname{
+  font-size: 22px;
+}
+.recardcontent{
+  width: 100%;
+  
+  
+}
+.rating{
+  display: flex;
+  justify-content: space-between;
+}
+.flex2{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
 }
