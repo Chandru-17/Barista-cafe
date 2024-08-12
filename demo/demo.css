@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.flex{
+    
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.box1{
+    
+    height: 500px;
+    width: 50%;
+    
+}
+.box2{
+    position: relative;
+    background-image: url(../images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 50%;
+    background-position: center;
+}
+.img{
+    height: 100%;
+    width: 100%;
+}
+.content{
+    position: absolute;
+    background-color: aqua;
+    padding: 10px;
+    top:10%;
+    left: 50%;
+}

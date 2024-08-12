@@ -35,7 +35,10 @@
 .logofont:hover {
   color: #dda15e;
 }
-
+.rightnav a img{
+  background-color: aliceblue;
+  border-radius: 90%;
+}
 .rightnav {
   display: flex;
   align-items: center;
@@ -629,8 +632,8 @@
   height: 40%;
   background-position: center;
   background-size: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .recarddetails {
@@ -798,4 +801,59 @@ input::placeholder {
 .footer {
   height: 60vh;
   background-color: #bc6c25;
+}
+.footerbox{
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: first baseline;
+  color: #ffffff;
+  padding-top: 6rem;
+ gap: 30px;
+  margin-left: 5rem;
+  
+}
+.layout1{
+  width: 30%;
+}
+.layout2{
+  width: 30%;
+}
+.fontsize{
+  font-size: 20px;
+  font-weight: 300;
+}
+.layout3{
+  width: 30%;
+  }
+.layout4{
+  width: 50%;
+}
+.layout1 h3 i{
+  padding-right: 5px;
+}
+.social{
+  display: flex;
+  gap: 1.5rem;
+}
+.social i{
+  color: #ffffff;
+}
+.social i:hover{
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 90%;
+  color: #bc6c25;
+}
+.layout1 p{
+  font-weight: 200;
+}
+.layout2 span{
+  font-weight: 200;
+}
+.hour{
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
